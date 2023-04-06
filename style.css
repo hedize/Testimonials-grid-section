@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* color-primary */
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral-color */
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+
+
+html,
+body {
+    height: 100%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    background-color: var(--Lightgrayishblue);
+    font-size: 13px;
+}
+
+img {
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+
+}
+
+
+/* layout */
+div.layout {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.container {
+    width: 1110px;
+    height: 572px;
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: repeat(4, 255px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "daniel daniel jonathan kira"
+        "jeanette Patrick Patrick kira"
+        ;
+    gap: 30px;
+}
+
+/* testimonials */
+.testimonial {
+    border-radius: 8px;
+    padding: 26px 32px 32px 32px;
+    box-shadow: 5px 10px 25px var(--Lightgray);
+}
+
+.daniel {
+    grid-area: daniel;
+    background: url(images/bg-pattern-quotation.svg) no-repeat;
+    background-position: right 80px top;
+    background-color: var(--Moderateviolet);
+    color: var(--White);
+}
+
+.jonathan {
+    background-color: var(--Verydarkgrayishblue);
+    grid-area: jonathan;
+    color: var(--White);
+
+}
+
+.kira {
+    background-color: var(--White);
+    grid-area: kira;
+    color: var(--Verydarkgrayishblue);
+
+}
+
+.jeanette {
+    background-color: var(--White);
+    grid-area: jeanette;
+    color: var(--Verydarkgrayishblue);
+}
+
+.patrick {
+    background-color: var(--Verydarkblackishblue);
+    grid-area: Patrick;
+    color: var(--White);
+}
+
+
+.daniel>.testimonial-content>.content-top>img {
+    border: 2px #A775F1 solid;
+
+}
+
+.patrick>.testimonial-content>.content-top>img {
+    border: 2px #733FC8 solid;
+}
+
+.content-top {
+    display: flex;
+    margin-bottom: 18px;
+
+
+}
+
+.testimonial-detail {
+    margin-left: 17px;
+
+}
+
+.testimonial-detail>.name {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+
+}
+
+.verified {
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+    opacity: 0.5;
+}
+
+.review-paragraph {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.quotation {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    opacity: 0.7;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 10px;
+    
+    
+
+
+}
+
+.attribution a {
+    color: var(--Moderateviolet);
+}
+
+/* tablet-design */
+@media screen and (max-width: 1025px) {
+    div.layout {
+        height: auto;
+        margin-top: 71px;
+        margin-bottom: 71px;
+    }
+
+    div.container {
+        width: 700px;
+        display: grid;
+        grid-template-columns: repeat(2, 340px);
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-areas:
+            "daniel daniel"
+            "jonathan jeanette  "
+            "Patrick kira"
+        ;
+        gap: 24px;
+    }
+    .attribution {
+        position: absolute;
+        bottom: -500px;
+        
+        }
+
+}
+
+/* mobile-design */
+@media screen and (max-width: 700px) {
+    div.layout {
+        height: auto;
+        margin: 71px 0 71px;
+    }
+
+    div.container {
+        width: 327px;
+        /* border: 2px solid black; */
+        display: grid;
+        grid-template-columns: repeat(1, 327px);
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-areas:
+            "daniel"
+            "jonathan"
+            "jeanette"
+            "Patrick"
+            "kira";
+        gap: 24px;
+
+    }
+
+
+    .daniel {
+        background-position: right 24px top;
+
+    }
+
+    .attribution {
+    position: absolute;
+    bottom: -1300px;
+    
+    }
+}
